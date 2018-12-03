@@ -34,6 +34,7 @@ module.exports = {
             thing.warning_low = req.body.warning_low;
             thing.warning_high = req.body.warning_high;
             thing.measure_unit = req.body.measure_unit;
+            thing.value = req.body.value;
             
             thing.save((error, thing) => {
                 if (error) {
