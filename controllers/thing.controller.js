@@ -44,5 +44,32 @@ module.exports = {
                 res.send({message: "Thing successfully updated!"})
             });
         });
+    },
+    create: (req, res) => {
+        const name = req.body.name;
+        const description = req.body.description;
+        const type = req.body.type;
+        const warning_low = req.body.warning_low;
+        const warning_high = req.body.warning_high;
+        const measure_unit = req.body.measure_unit;
+        const value = req.body.value;
+        const date = req.body.date;
+
+        const thing = new Thing({
+            name,
+            description,
+            type,
+            warning_low,
+            warning_high,
+            measure_unit,
+            value,
+            date
+        });
+        thing.save((error) => {
+            if (error) {
+                console.log("Error on thing");
+            }
+            res.send({message: "Thing successfully created!"})
+        });
     }
 }
