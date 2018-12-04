@@ -7,7 +7,8 @@ const ThingSchema = mongoose.Schema({
     warning_low: {type: Number, required: true},
     warning_high: {type: Number, required: true},
     measure_unit: {type: String, required: true},
-    value: {type: String, required: true}
+    value: {type: String, required: true},
+    date: {type: Date, required: true}
 })
 
 module.exports = mongoose.model('Thing', ThingSchema);
