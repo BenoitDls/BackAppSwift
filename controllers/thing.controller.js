@@ -65,11 +65,11 @@ module.exports = {
             value,
             date
         });
-        thing.save((error) => {
+        thing.save((error, thing) => {
             if (error) {
                 console.log("Error on thing");
             }
-            res.send({message: "Thing successfully created!"})
+            res.send({message: "Thing successfully created!", id : thing.id})
         });
     }
 }
